@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rock Salt";
+}
+.menu2 {
+  display: none;
+}
+.nav_logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.nav_logo i {
+  padding-right: 10px;
+}
+.nav_logo i {
+  transform: rotate(0deg);
+  transition: transform 1s;
+}
+.nav_logo i:hover {
+  transform: rotate(45deg);
+}
+
+.material-symbols-outlined {
+  width: 25px;
+  padding-top: 5px;
+}
+.nav_target i {
+  width: 40px;
+}
+.nav_links {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 80px;
+  right: 0;
+  background-color: #f0f5f9;
+  display: grid;
+  place-items: center;
+  clip-path: circle(0% at top right);
+  transition: clip-path 2.4s;
+}
+.nav_link {
+  text-decoration: none;
+  color: #1e2022;
+}
+.nav_links:target {
+  clip-path: circle(150% at top left);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "menunav" "filtrobusqueda" "seccionprincipal" "piedepagina" "footer";
+  grid-template-rows: 1fr 1fr 10fr 0.5fr;
+  height: 95vh;
+}
+
+.menunav {
+  grid-area: menunav;
+  display: flex;
+  background-color: #f0f5f9;
+  color: #1e2022;
+  font-size: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.filtrobusqueda {
+  grid-area: filtrobusqueda;
+  background-color: #bfc7d1;
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  align-items: center;
+  height: auto;
+}
+.filtrobusqueda select {
+  margin-bottom: 15px;
+  width: 200px;
+}
+.opcion {
+  margin-bottom: 0;
+}
+
+.seccionprincipal {
+  grid-area: seccionprincipal;
+  display: flex;
+  background-color: #c9d6df;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 71vh;
+  overflow: scroll;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #1e2022;
+  border: 1px solid #1e2022;
+  box-shadow: 0 3px 5px gray;
+  width: 345px;
+  border-radius: 2px;
+}
+.card img {
+  width: 250px;
+  padding-top: 30px;
+}
+.card p {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #f0f5f9;
+}
+.card button {
+  margin-bottom: 30px;
+  width: 100px;
+  padding: 5px;
+  border: none;
+  background-color: #788189;
+  color: white;
+  border-radius: 6px;
+  border-color: #788189;
+  transition: background-color 0.3s ease-out;
+}
+.card button:hover {
+  background-color: rgb(34, 34, 33);
+}
+
+.piedepagina {
+  grid-area: piedepagina;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.li {
+  display: flex;
+  padding: 8px;
+  height: 20px;
+  border: 0.05px solid rgba(141, 141, 141, 0.801);
+  color: rgb(99, 135, 201);
+  font-size: small;
+  border-radius: 5px;
+  align-items: center;
+}
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f5f9;
+  color: #1e2022;
+}
+.footer i {
+  transform: rotate(0deg);
+  transition: transform 1s;
+}
+.footer i:hover {
+  transform: rotate(45deg);
+}
+
+@media (min-width: 576px) {
+  .grid-container {
+    height: 76vh;
+    display: grid;
+    grid-template-areas: "menunav filtrobusqueda " " menunav seccionprincipal" "menunav piedepagina " "footer footer";
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 10fr 1fr 1fr;
+  }
+  .menunav {
+    grid-area: menunav;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f5f9;
+    color: #1e2022;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: start;
+    height: 108%;
+  }
+  .nav_logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .nav_logo i {
+    padding-right: 10px;
+  }
+
+  .menunav h1 {
+    font-size: 23px;
+  }
+  .nav_target i {
+    display: none;
+  }
+  .menu2 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 400px;
+    padding-left: 20px;
+  }
+  .seccionprincipal {
+    display: flex;
+    max-width: 100vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .card {
+    border-radius: 18px;
+    height: 315px;
+    width: 248px;
+  }
+  .filtrobusqueda select {
+    margin-bottom: 15px;
+    width: 97%;
+  }
+  .card img {
+    width: 176px;
+  }
+}
